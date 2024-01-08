@@ -34,7 +34,7 @@ namespace WebApplication1.Controllers
                 .FirstOrDefault(x=>x.Id==Id);
 
 
-            if (product == null) return NotFound();
+            if (product == null) return NotFound(); 
 
             List<Product> products =  _context.Products.Include(x=>x.Category)
                 .Include(p => p.ProductImages.Where(pi => pi.IsPrimary!= null))

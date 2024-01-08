@@ -8,13 +8,18 @@
                         <h4 class="card-title">Create Category</h4>
                         <form class="forms-sample" method="post">
                             <div class="form-group">
-                                <label for="exampleInputName1">Name</label>
+                                <label asp-for="Name">Name</label>
                                 <input asp-for="Name" class="form-control"  placeholder="Name" >
                                 <span asp-validation-for="Name" class="text-danger"></span>
                             </div>
+                            <div class="form-group">
+                                <label asp-for="Descriptions">Description</label> 
+                                <input asp-for="Descriptions" class="form-control" placeholder="Description">
+                                <span asp-validation-for="Descriptions" class="text-danger"></span>
+                            </div>
 
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
-                            <button asp-action="Index" class="btn btn-light">Cancel</button>
+                            <button asp-action="Index" asp-controller="category" class="btn btn-light">Cancel</button>
                         </form>
                     </div>
                 </div>

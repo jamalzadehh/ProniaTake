@@ -1,11 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TooGoo Admin</title>
+    <title>Majestic Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/admin/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/admin/vendors/base/vendor.bundle.base.css">
@@ -20,13 +19,30 @@
 </head>
 <body>
     <div class="container-scroller">
+        <div class="row p-0 m-0 proBanner" id="proBanner">
+            <div class="col-md-12 p-0 m-0">
+                <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
+                    <div class="ps-lg-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
+                            <a href="https://www.bootstrapdash.com/product/majestic-admin-pro/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="https://www.bootstrapdash.com/product/majestic-admin-pro/"><i class="mdi mdi-home me-3 text-white"></i></a>
+                        <button id="bannerClose" class="btn border-0 p-0">
+                            <i class="mdi mdi-close text-white me-0"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex justify-content-center">
                 <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                    <!--************* Deyiw ***************-->
                     <a class="navbar-brand brand-logo" href="index.html"><img src="~/admin/images/logo.svg" alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="index.html">TooGoo</a>
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="~/admin/images/logo-mini.svg" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-sort-variant"></span>
                     </button>
@@ -46,8 +62,8 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown mr-1">
-                        <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+                    <li class="nav-item dropdown me-1">
+                        <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
                             <i class="mdi mdi-message-text mx-0"></i>
                             <span class="count"></span>
                         </a>
@@ -94,8 +110,8 @@
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown mr-4">
-                        <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">
+                    <li class="nav-item dropdown me-4">
+                        <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                             <i class="mdi mdi-bell mx-0"></i>
                             <span class="count"></span>
                         </a>
@@ -143,7 +159,7 @@
                         </div>
                     </li>
                     <li class="nav-item nav-profile dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
                             <img src="~/admin/images/faces/face5.jpg" alt="profile" />
                             <span class="nav-profile-name">Louis Barnett</span>
                         </a>
@@ -170,19 +186,51 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" asp-controller="home" asp-action="index">
                             <i class="mdi mdi-home menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
-                    </li>  <li class="nav-item">
-                        <a class="nav-link" asp-controller="category">
-                            <i class="mdi mdi-home menu-icon"></i>
-                            <span class="menu-title">Category</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">UI Elements</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="category" asp-action="index">Category</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="tag" asp-action="index">Tags</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="color" asp-action="index">Color</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="size" asp-action="index">Size</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="slide" asp-action="index">Slide</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="product" asp-action="index">Product</a></li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/forms/basic_elements.html">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Form elements</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/charts/chartjs.html">
+                            <i class="mdi mdi-chart-pie menu-icon"></i>
+                            <span class="menu-title">Charts</span>
+                        </a>
+                    </li>
+
+
+
+
                 </ul>
             </nav>
+            <!-- partial -->
             @RenderBody()
+            <!-- main-panel ends -->
         </div>
         <!-- page-body-wrapper ends -->
     </div>
@@ -206,7 +254,10 @@
     <script src="~/admin/js/jquery.dataTables.js"></script>
     <script src="~/admin/js/dataTables.bootstrap4.js"></script>
     <!-- End custom js for this page-->
+
     <script src="~/admin/js/jquery.cookie.js" type="text/javascript"></script>
+    @RenderSection("DeleteImage",false);
 </body>
 
 </html>
+

@@ -1254,10 +1254,10 @@
                                     <div class="product-img">
                                         <a asp-action="detail"  asp-controller="Product" asp-route-id="@Product.Id">
                                             <img class="primary-img"
-                                                 src="~/assets/images/website-images/@Product.ProductImages.Find(x=>x.IsPrimary==true).Url"
+                                                 src="~/assets/images/website-images/@Product.ProductImages.FirstOrDefault(x=>x.IsPrimary==true)?.Url"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="~/assets/images/website-images/@Product.ProductImages.Find(x=>x.IsPrimary==true).Url"
+                                                 src="~/assets/images/website-images/@Product.ProductImages.FirstOrDefault(x=>x.IsPrimary==true)?.Url"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -1430,10 +1430,10 @@
 
                                     <a href="shop.html">
                                         <img class="primary-img"
-                                             src="~/assets/images/website-images/@product.ProductImages.FirstOrDefault(pi=>pi.IsPrimary==true).Url"
+                                             src="~/assets/images/website-images/@product.ProductImages.FirstOrDefault(pi=>pi.IsPrimary==true)?.Url"
                                              alt="@product.Name" />
                                         <img class="secondary-img"
-                                             src="~/assets/images/website-images//@product.ProductImages.FirstOrDefault(pi=>pi.IsPrimary==true).Url"
+                                             src="~/assets/images/website-images//@product.ProductImages.FirstOrDefault(pi=>pi.IsPrimary==true)?.Url"
                                              alt="Product Images" />
                                     </a>
                                     <div class="product-add-action">
@@ -1935,8 +1935,7 @@
     <i class="fa fa-angle-double-up"></i>
 </a>
 <!-- Scroll To Top End Here -->
-    </div>
-
+    
 <!-- Global Vendor, plugins JS -->
 <!-- JS Files
 ============================================ -->
